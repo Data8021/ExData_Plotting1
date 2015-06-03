@@ -5,7 +5,7 @@ library(lubridate)
 ## Download file and unzip
 fileURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
 download.file(fileURL, destfile = "power.zip", method="curl")
-download.date <- now()
+dateDownloaded <- date()
 rm(fileURL)
 unzip("power.zip")
 
