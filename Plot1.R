@@ -21,4 +21,8 @@ power <- filter(power, as.Date(Date, "%d/%m/%Y") == "2007-02-01" | as.Date(Date,
 power <- mutate(power, DateTime = paste(Date, Time, sep = " "))
 power$DateTime <- dmy_hms(power$DateTime)
 
-
+## Create histogram PNG
+png("plot1.png", width = 480, height = 480)
+hist(power$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)", 
+     main = "Global Active Power")
+dev.off()
